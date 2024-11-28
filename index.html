@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infomaximum Test</title>
+</head>
+<body>
+    <div class="form">
+        <div class="form-field">
+            <div>Поле для ввода суммы кредита в выбранной валюте</div>
+            <div class="group-object">
+                <input class="input" type="number" id="loanAmount"  value="1000"> 
+                <select class="select" id="currency"></select>
+            </div>
+        </div>
+        <div class="form-field">
+            <div>Поле для ввода процентной ставки (число от 0,01 до 100)</div>
+            <input class="input" type="number" step="0.01" max=3 id="interestRate" value="5"> 
+        </div>
+        <div class="form-field">
+            <div>Поле для ввода срока кредита (в месяцах)</div>
+            <input class="input" id="loanTerm" type="number" value="12"> 
+        </div>
+    </div>
+    <div class="result">
+        <div class="result-report">ВЫПЛАТА</div>
+        <label class="error-text" id="loanError"></label>
+        <div class="result-report">
+            <label id="resultSelect"></label>
+            <label id="resultMonthSelect"></label>
+        </div>
+        <div class="result-report">
+            <label id="resultRub"></label>
+            <label id="resultMonthRub"></label>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+<style>
+    html {
+        font-size: 16px;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+    .form {
+        background-color: #fff;
+        max-width: 25rem;
+        margin: 1.25rem auto;
+        padding: 1.25rem; 
+        border-radius: 0.3125rem;
+        box-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,0.1);
+    }
+
+    .form div {
+        margin-bottom: 0.625rem;
+    }
+
+    .group-object {
+        display: flex;
+        align-items: center;
+    }
+
+    .input, .select {
+        padding: 0.5rem;
+        margin-right: 0.625rem;
+        border: 0.0625rem solid #ccc;
+        border-radius: 0.1875rem;
+    }
+
+    .result {
+        margin-top: 1.25rem;
+        background-color: #f9f9f9;
+        border-top: 0.0625rem solid #ccc; 
+        padding: 0.625rem; 
+        text-align: center;
+        border-radius: 0.3125rem;
+    }
+
+    .result-report {
+        margin-top: 0.625rem;
+        font-size: 1.2rem;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .result-report label {
+        font-size: 1.2rem;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .error-text {
+        font-size: 1.2rem;
+        color: rgb(139, 18, 18);
+    }
+
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+</style>
